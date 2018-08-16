@@ -9,8 +9,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import za.co.pabimoloi.parmesan.R
-import za.co.pabimoloi.parmesan.data.Meal
-import za.co.pabimoloi.parmesan.data.Meals
+import za.co.pabimoloi.parmesan.data.model.Meal
+import za.co.pabimoloi.parmesan.data.model.Meals
 import za.co.pabimoloi.parmesan.network.RetrofitService
 import za.co.pabimoloi.parmesan.network.RetrofitUtility
 
@@ -39,7 +39,7 @@ class Home : AppCompatActivity(){
         false
     }
 
-    var retrofitService: RetrofitService = RetrofitUtility.getRetrofitService()
+    //var retrofitService: RetrofitService = RetrofitUtility.getRetrofitService()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ class Home : AppCompatActivity(){
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        retrofitService.getLatestMeals().enqueue(object: Callback<Meals> {
+       /* retrofitService.getLatestMeals().enqueue(object: Callback<Meals> {
             override fun onFailure(call: Call<Meals>?, t: Throwable?) {
                Log.d("Failure call","Call Failed")
             }
@@ -59,7 +59,7 @@ class Home : AppCompatActivity(){
                 //Log.d("Successful call","Call Successful")
             }
 
-        })
+        })*/
 
 
     }
