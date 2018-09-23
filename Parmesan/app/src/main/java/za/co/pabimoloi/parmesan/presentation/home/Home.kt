@@ -2,29 +2,28 @@ package za.co.pabimoloi.parmesan.presentation.home
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_home.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import za.co.pabimoloi.parmesan.R
-import za.co.pabimoloi.parmesan.data.model.Meal
-import za.co.pabimoloi.parmesan.data.model.Meals
-import za.co.pabimoloi.parmesan.network.RetrofitService
-import za.co.pabimoloi.parmesan.network.RetrofitUtility
+import za.co.pabimoloi.parmesan.presentation.MealCategoryFragment
+import za.co.pabimoloi.parmesan.presentation.latestmeals.LatestMealsFragment
 
 
 class Home : AppCompatActivity(){
 
+    //private lateinit var latestMealsListAdapter: LatestMealsListAdapter
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_meal -> {
-               // message.setText(R.string.title_home)
+                val latestMealsFragment = LatestMealsFragment.newInstance()
+                openFragment(latestMealsFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_meal_categories -> {
-                //message.setText(R.string.title_dashboard)
+                val mealCategoryFragment = MealCategoryFragment.newInstance()
+                openFragment(mealCategoryFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_meal_ingredient -> {
@@ -38,6 +37,11 @@ class Home : AppCompatActivity(){
         }
         false
     }
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_layout_home_screen, fragment)
+        transaction.commit()
+    }
 
     //var retrofitService: RetrofitService = RetrofitUtility.getRetrofitService()
 
@@ -46,8 +50,15 @@ class Home : AppCompatActivity(){
         setContentView(R.layout.activity_home)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.setSelectedItemId(R.id.navigation_meal)
 
-       /* retrofitService.getLatestMeals().enqueue(object: Callback<Meals> {
+        //recyclerView.adapter = latestMealsListAdapter
+       // val viewModel = LatestMealsViewModel(application)
+       // viewModel.getMeals()
+
+//        viewModel.mealsResponse.observe(this, Observer<List<Meal>> { meals -> latestMealsListAdapter.setMeals(meals!!) })
+
+        /*retrofitService.getLatestMeals().enqueue(object: Callback<Meals> {
             override fun onFailure(call: Call<Meals>?, t: Throwable?) {
                Log.d("Failure call","Call Failed")
             }
@@ -56,11 +67,10 @@ class Home : AppCompatActivity(){
                 Log.d("Response", response!!.body()!!.meals!!.get(1).getStrIngredient1())
                 var meals2: List<Meal>? = null
                 meals2 = response!!.body()!!.meals!!.toList()
-                //Log.d("Successful call","Call Successful")
+                Log.d("Successful call","Call Successful")
             }
 
         })*/
-
 
     }
 }

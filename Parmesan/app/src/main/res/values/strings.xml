@@ -9,9 +9,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="title_latest_meals">Latest Meals</string>
+    <string name="title_latest_meals">Discover</string>
     <string name="title_meal_thumbnail">Meal Thumbnail</string>
     <string name="title_meal_name">Meal Name</string>
-    <string name="title_meal_category">Meal Category</string>
+    <string name="title_meal_category">Meal Categories</string>
 
 </resources>

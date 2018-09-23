@@ -1,4 +1,4 @@
-package za.co.pabimoloi.parmesan.network
+package za.co.pabimoloi.parmesan.data.network
 
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
