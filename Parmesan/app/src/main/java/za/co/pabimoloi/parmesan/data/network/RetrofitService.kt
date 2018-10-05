@@ -16,5 +16,5 @@ interface RetrofitService {
     fun getMealCategories(): Call<CategoryList>
 
     @GET("random.php")
-    fun getRandomMeal(): Call<Meal>
+    fun getRandomMeal(): Call<Meals>
 }

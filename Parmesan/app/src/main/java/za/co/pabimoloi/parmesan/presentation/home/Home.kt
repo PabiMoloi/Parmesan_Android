@@ -6,7 +6,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import za.co.pabimoloi.parmesan.R
-import za.co.pabimoloi.parmesan.presentation.MealCategoryFragment
+import za.co.pabimoloi.parmesan.presentation.RandomMealsFragment
+import za.co.pabimoloi.parmesan.presentation.category.MealCategoryFragment
 import za.co.pabimoloi.parmesan.presentation.latestmeals.LatestMealsFragment
 
 
@@ -27,13 +28,14 @@ class Home : AppCompatActivity(){
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_meal_ingredient -> {
-                //message.setText(R.string.title_notifications)
+                val randomMealFragment = RandomMealsFragment.newInstance()
+                openFragment(randomMealFragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_meal_location -> {
+           /* R.id.navigation_meal_location -> {
                 //message.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
-            }
+            }*/
         }
         false
     }

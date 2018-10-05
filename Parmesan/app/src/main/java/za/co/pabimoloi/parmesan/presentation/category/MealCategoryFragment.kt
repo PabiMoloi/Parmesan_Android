@@ -1,18 +1,16 @@
-package za.co.pabimoloi.parmesan.presentation
+package za.co.pabimoloi.parmesan.presentation.category
 
 import android.app.Application
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Category
-import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.MealCategoriesViewModel
 
 class MealCategoryFragment: Fragment() {

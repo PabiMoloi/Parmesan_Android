@@ -13,7 +13,6 @@ import za.co.pabimoloi.parmesan.viewmodel.LatestMealsViewModel
 
 class LatestMealsListAdapter(val viewModel: LatestMealsViewModel) : RecyclerView.Adapter<LatestMealsListAdapter.MealListViewHolder>() {
 
-    //private lateinit var mealList: List<Meal>
 
     class MealListViewHolder(var view: View): RecyclerView.ViewHolder(view) {
 

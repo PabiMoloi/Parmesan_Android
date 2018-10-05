@@ -7,15 +7,15 @@ import za.co.pabimoloi.parmesan.data.InjectorUtil
 import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.data.repository.IMealsRepository
 
-class LatestMealsViewModel(private val application: Application): ViewModel() {
+class RandomMealViewModel (private val application: Application): ViewModel() {
 
-    lateinit var iMealsRepository: IMealsRepository
+    private lateinit var iMealsRepository: IMealsRepository
     var mealsResponse: MutableLiveData<List<Meal>> = MutableLiveData()
     var apiError = MutableLiveData<Throwable>()
 
     fun getMeals() {
         iMealsRepository = InjectorUtil.getInstance(application)
-        iMealsRepository.getLatestMeals(
+        iMealsRepository.getRandomMeals(
                 {
                     mealsResponse.value = it
                 },

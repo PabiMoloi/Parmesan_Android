@@ -16,9 +16,4 @@
         android:icon="@drawable/ic_room_service"
         android:title="@string/title_main_ingredient" />
 
-    <item
-        android:id="@+id/navigation_meal_location"
-        android:icon="@drawable/ic_place"
-        android:title="@string/title_meal_area" />
-
 </menu>

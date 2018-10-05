@@ -3,7 +3,7 @@
     <string name="title_meal_of_the_day">Latest</string>
     <string name="title_meal_categories">Categories</string>
     <string name="title_activity_home">Home</string>
-    <string name="title_main_ingredient">Ingredient</string>
+    <string name="title_main_ingredient">Random</string>
     <string name="title_meal_area">Area</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -13,5 +13,11 @@
     <string name="title_meal_thumbnail">Meal Thumbnail</string>
     <string name="title_meal_name">Meal Name</string>
     <string name="title_meal_category">Meal Categories</string>
+
+    <string name="title_ingredient">Ingredients</string>
+    <string name="pseudo_ingredient">Pseudo Ingredient</string>
+    <string name="pseudo_measure">Psuedo Measure</string>
+    <string name="title_instructions">Instructions</string>
+    <string name="title_source">Source: </string>
 
 </resources>
