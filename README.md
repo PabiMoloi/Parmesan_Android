@@ -3,7 +3,8 @@ Parmesan is a simple android application that displays a list of meals and their
 
 # ScreenShots
 ![Screenshot](Parmesan_Android/art/LatestMeals.jpg)
-![Screenshot](Parmesan_Android/art/Meal%20%Categories.jpg)
+![Screenshot](Parmesan_Android/art/Meal Categories.jpg)
+![Screenshot](Parmesan_Android/art/RandomMeal.jpg)
       
 
 # Libraries
