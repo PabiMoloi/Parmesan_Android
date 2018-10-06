@@ -11,6 +11,9 @@ Parmesan is a simple android application that displays a list of meals and their
 - Android Support Library
 
 # API
+The application reads recipe data from The MealDB. 
+URL: https://www.themealdb.com/
+
 
 # Architecture
 The architecture used for Parmesan is Model-View-ViewModel.
