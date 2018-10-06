@@ -27,7 +27,6 @@ class RandomMealsFragment: Fragment() {
         viewModel.getMeals()
         val view: View = inflater.inflate(R.layout.fragment_random_meal, container, false)
         val recyclerView =view.findViewById<RecyclerView>(R.id.recyclerViewRandom)
-        //recyclerView.setNestedScrollingEnabled(false)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = randomMealAdapter
         viewModel.mealsResponse.observe(this, Observer<List<Meal>> {
