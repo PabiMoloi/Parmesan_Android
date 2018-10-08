@@ -21,8 +21,8 @@
         </activity>
         <activity
             android:name=".presentation.home.Home"
-            android:label="@string/title_activity_home">
-        </activity>
+            android:label="@string/title_activity_home"></activity>
+        <activity android:name=".MealView"></activity>
     </application>
 
 </manifest>

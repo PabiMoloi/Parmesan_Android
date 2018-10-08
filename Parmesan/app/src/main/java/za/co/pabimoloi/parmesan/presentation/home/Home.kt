@@ -2,13 +2,11 @@ package za.co.pabimoloi.parmesan.presentation.home
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.recyclerview_item_random_meal.*
 import za.co.pabimoloi.parmesan.R
-import za.co.pabimoloi.parmesan.presentation.RandomMealsFragment
+import za.co.pabimoloi.parmesan.presentation.random.RandomMealsFragment
 import za.co.pabimoloi.parmesan.presentation.category.MealCategoryFragment
 import za.co.pabimoloi.parmesan.presentation.latestmeals.LatestMealsFragment
 

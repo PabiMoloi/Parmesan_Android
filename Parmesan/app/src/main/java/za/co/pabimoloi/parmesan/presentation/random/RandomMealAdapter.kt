@@ -1,5 +1,7 @@
-package za.co.pabimoloi.parmesan.presentation
+package za.co.pabimoloi.parmesan.presentation.random
 
+import android.app.Application
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +11,18 @@ import android.widget.TextView
 import com.squareup.picasso.Picasso
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Meal
+import za.co.pabimoloi.parmesan.presentation.home.Home
 import za.co.pabimoloi.parmesan.viewmodel.RandomMealViewModel
 
-class RandomMealAdapter(val randomMealViewModel: RandomMealViewModel): RecyclerView.Adapter<RandomMealAdapter.MealListViewHolder>()  {
-    class MealListViewHolder(var view: View): RecyclerView.ViewHolder(view) {
+class RandomMealAdapter(val randomMealViewModel: RandomMealViewModel): RecyclerView.Adapter<RandomMealAdapter.MealListViewHolder>() {
+
+    class MealListViewHolder(var view: View): RecyclerView.ViewHolder(view),View.OnClickListener {
+        override fun onClick(v: View?) {
+            val randomMealFragment = RandomMealsFragment.newInstance()
+           /* val transaction = supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.frame_layout_home_screen, randomMealFragment)
+            transaction?.commit()*/
+        }
 
         var mealName: TextView
         var mealCategory: TextView
@@ -34,6 +44,7 @@ class RandomMealAdapter(val randomMealViewModel: RandomMealViewModel): RecyclerV
 
         var instructions: TextView
         var sourceUrl: TextView
+        var shuffleFAB: FloatingActionButton
 
         init {
             mealName = view.findViewById(R.id.textViewRandomMealName)
@@ -54,6 +65,8 @@ class RandomMealAdapter(val randomMealViewModel: RandomMealViewModel): RecyclerV
             measure6 = view.findViewById(R.id.textViewMeasure6)
             instructions = view.findViewById(R.id.textViewIns)
             sourceUrl = view.findViewById(R.id.textViewRandomSourceText)
+            shuffleFAB = view.findViewById(R.id.floatingActionButtonShuffle)
+            shuffleFAB.setOnClickListener(this)
         }
     }
 
