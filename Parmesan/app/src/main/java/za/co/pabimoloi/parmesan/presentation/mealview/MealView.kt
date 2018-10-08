@@ -18,7 +18,6 @@ class MealView : AppCompatActivity() {
         val viewModel = MealViewViewModel(application)
         val mealViewAdapter = MealViewAdapter(viewModel)
         viewModel.getMealById(mealId)
-
         val recyclerView = findViewById<RecyclerView>(R.id.recycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = mealViewAdapter
