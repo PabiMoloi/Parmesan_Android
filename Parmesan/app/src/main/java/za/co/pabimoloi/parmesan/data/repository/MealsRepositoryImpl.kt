@@ -12,6 +12,7 @@ import za.co.pabimoloi.parmesan.data.network.RetrofitService
 import za.co.pabimoloi.parmesan.data.network.RetrofitUtility
 
 class MealsRepositoryImpl(private var retrofitService: RetrofitService): IMealsRepository  {
+
     override fun getRandomMeals(successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit) {
         run {
             retrofitService.getRandomMeal().enqueue(object : Callback<Meals> {
@@ -64,8 +65,20 @@ class MealsRepositoryImpl(private var retrofitService: RetrofitService): IMealsR
         }
         }
 
-    override fun getMealById(id: String): LiveData<Meal> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun getMealById(id: String,successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit) {
+        run {
+            retrofitService.getMealById(id).enqueue(object : Callback<Meals> {
+                override fun onResponse(call: Call<Meals>?, response: Response<Meals>?) {
+                    response?.body()?.let {
+                        successHandler(it.meals)
+                    }
+                }
+
+                override fun onFailure(call: Call<Meals>?, t: Throwable?) {
+                    failureHandler(t)
+                }
+            })
+        }
     }
 
     override fun getMealsByCategory(id: String): LiveData<Meals> {

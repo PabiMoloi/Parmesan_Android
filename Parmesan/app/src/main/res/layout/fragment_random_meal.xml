@@ -10,9 +10,5 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/recyclerview_item_random_meal"
     android:background="@color/colorWhite">
-
-
-
-
     </android.support.v7.widget.RecyclerView>
     </android.support.constraint.ConstraintLayout>

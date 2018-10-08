@@ -22,7 +22,7 @@
         <activity
             android:name=".presentation.home.Home"
             android:label="@string/title_activity_home"></activity>
-        <activity android:name=".MealView"></activity>
+        <activity android:name=".presentation.mealview.MealView"></activity>
     </application>
 
 </manifest>

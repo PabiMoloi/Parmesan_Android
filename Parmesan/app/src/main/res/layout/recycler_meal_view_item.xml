@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorWhite">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    tools:context=".presentation.mealview.MealView">
 
     <TextView
         android:id="@+id/textViewRandomMealName"
@@ -337,19 +337,4 @@
         app:layout_constraintStart_toEndOf="@+id/textViewRandomSource"
         app:layout_constraintTop_toBottomOf="@+id/textViewIns"
         tools:text="www.source.co.za" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonShuffle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textViewRandomCategory"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRandomMealArea"
-        app:rippleColor="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/ic_shuffle_24dp" />
 </android.support.constraint.ConstraintLayout>

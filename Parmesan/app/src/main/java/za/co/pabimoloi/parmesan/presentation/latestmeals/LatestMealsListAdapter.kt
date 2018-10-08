@@ -1,8 +1,6 @@
 package za.co.pabimoloi.parmesan.presentation.latestmeals
 
-import android.content.Context
 import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
-import za.co.pabimoloi.parmesan.MealView
+import za.co.pabimoloi.parmesan.presentation.mealview.MealView
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.LatestMealsViewModel
@@ -31,7 +29,7 @@ class LatestMealsListAdapter(val viewModel: LatestMealsViewModel) : RecyclerView
 
         }
     }
-    
+
     override fun onBindViewHolder(holder: MealListViewHolder, position: Int) {
         val meal: Meal = viewModel.getMealAt(position)!!
         holder.mealName.text = meal.getStrMeal()
