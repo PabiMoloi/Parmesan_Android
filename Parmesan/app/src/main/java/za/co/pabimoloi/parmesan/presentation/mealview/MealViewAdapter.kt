@@ -11,7 +11,7 @@ import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.MealViewViewModel
 
-class MealViewAdapter(val viewModel: MealViewViewModel) : RecyclerView.Adapter<MealViewAdapter.MealListViewHolder>(){
+class MealViewAdapter(private val viewModel: MealViewViewModel) : RecyclerView.Adapter<MealViewAdapter.MealListViewHolder>(){
 
     class MealListViewHolder(var view: View): RecyclerView.ViewHolder(view){
 

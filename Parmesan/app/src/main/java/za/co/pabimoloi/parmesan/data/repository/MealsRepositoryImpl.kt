@@ -38,16 +38,9 @@ class MealsRepositoryImpl(private var retrofitService: RetrofitService): IMealsR
            override fun onResponse(call: Call<CategoryList>, response: Response<CategoryList>) {
                response.body()?.let { successHandler(it.getCategories()) }
            }
-
        })
        }
     }
-
-    override fun getLatestMeals(): Call<Meals> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    //var retrofitService: RetrofitService = RetrofitUtility.getRetrofitService()
 
     override fun getLatestMeals(successHandler: (List<Meal>?)-> Unit, failureHandler: (Throwable?) ->Unit) {
         run {
@@ -79,17 +72,5 @@ class MealsRepositoryImpl(private var retrofitService: RetrofitService): IMealsR
                 }
             })
         }
-    }
-
-    override fun getMealsByCategory(id: String): LiveData<Meals> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getMealsByMainIngredient(ingredient: String): LiveData<Meals> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getMealsByArea(area: String): LiveData<Meals> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

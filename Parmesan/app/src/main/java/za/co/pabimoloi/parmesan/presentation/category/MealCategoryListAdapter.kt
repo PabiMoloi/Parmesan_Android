@@ -12,27 +12,25 @@ import za.co.pabimoloi.parmesan.data.model.Category
 import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.MealCategoriesViewModel
 
-class MealCategoryListAdapter(val mealCategoryViewModel: MealCategoriesViewModel) : RecyclerView.Adapter<MealCategoryListAdapter.MealCategoryListViewHolder>(){
-    private lateinit var mealList: List<Meal>
+class MealCategoryListAdapter(private val mealCategoryViewModel: MealCategoriesViewModel) : RecyclerView.Adapter<MealCategoryListAdapter.MealCategoryListViewHolder>(){
 
     class MealCategoryListViewHolder(var view: View): RecyclerView.ViewHolder(view) {
 
         var categoryName: TextView
-        //var categoryDescription: TextView
         var mealThumb: ImageView
+        var categoryDescription: TextView
 
         init {
             categoryName = view.findViewById(R.id.textViewCategoryName)
-            //categoryDescription = view.findViewById(R.id.textViewCategoryDesciption)
             mealThumb = view.findViewById(R.id.imageViewCategoryThumb)
-
+            categoryDescription = view.findViewById(R.id.textViewCategoryDescription)
         }
     }
     override fun onBindViewHolder(holderCategory: MealCategoryListViewHolder, position: Int) {
         val mealCategory: Category = mealCategoryViewModel.getMealCategoryAt(position)!!
         holderCategory.categoryName.text = mealCategory.getStrCategory()
-        //holderCategory.categoryDescription.text = mealCategory.getStrCategoryDescription()
         Picasso.get().load(mealCategory.getStrCategoryThumb()).into(holderCategory.mealThumb)
+        holderCategory.categoryDescription.text = mealCategory.getStrCategoryDescription()
         holderCategory.view.tag = position
     }
 

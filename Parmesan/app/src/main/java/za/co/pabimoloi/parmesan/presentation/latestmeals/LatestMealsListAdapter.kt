@@ -13,7 +13,7 @@ import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.LatestMealsViewModel
 
-class LatestMealsListAdapter(val viewModel: LatestMealsViewModel) : RecyclerView.Adapter<LatestMealsListAdapter.MealListViewHolder>() {
+class LatestMealsListAdapter(private val viewModel: LatestMealsViewModel) : RecyclerView.Adapter<LatestMealsListAdapter.MealListViewHolder>() {
 
     class MealListViewHolder(var view: View): RecyclerView.ViewHolder(view) {
         var mealName: TextView
@@ -39,7 +39,6 @@ class LatestMealsListAdapter(val viewModel: LatestMealsViewModel) : RecyclerView
         holder.view.tag = position
         holder.view.setOnClickListener { view ->
             val intent = Intent(view.context, MealView::class.java)
-            //startActivity(view.context,intent,null)
             intent.putExtra("mealId",meal.getIdMeal())
             view.context.startActivity(intent)
         }

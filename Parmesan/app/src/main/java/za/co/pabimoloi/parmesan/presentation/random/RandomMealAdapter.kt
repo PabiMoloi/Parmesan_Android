@@ -14,7 +14,7 @@ import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.presentation.home.Home
 import za.co.pabimoloi.parmesan.viewmodel.RandomMealViewModel
 
-class RandomMealAdapter(val randomMealViewModel: RandomMealViewModel): RecyclerView.Adapter<RandomMealAdapter.MealListViewHolder>() {
+class RandomMealAdapter(private val randomMealViewModel: RandomMealViewModel): RecyclerView.Adapter<RandomMealAdapter.MealListViewHolder>() {
 
     class MealListViewHolder(var view: View): RecyclerView.ViewHolder(view),View.OnClickListener {
         override fun onClick(v: View?) {

@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/colorWhite">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="4dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
         app:cardBackgroundColor="@color/colorWhite"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
@@ -21,11 +21,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageViewCategoryThumb"
@@ -41,15 +41,14 @@
                 android:id="@+id/textViewCategoryName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:background="@color/colorWhite"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textColor="@color/colorGreyText"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewCategoryThumb"
@@ -59,12 +58,26 @@
                 android:id="@+id/dividerView"
                 android:layout_width="120dp"
                 android:layout_height="2dp"
-                android:layout_marginBottom="8dp"
                 android:background="@color/colorAccent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewCategoryName" />
+
+            <TextView
+                android:id="@+id/textViewCategoryDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorLightGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerView"
+                tools:text="Category Description" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

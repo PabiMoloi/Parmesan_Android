@@ -9,11 +9,7 @@ import za.co.pabimoloi.parmesan.data.model.Meals
 
 interface IMealsRepository {
 
-    fun getLatestMeals(): Call<Meals>
     fun getMealById(id: String,successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit)
-    fun getMealsByCategory(id: String): LiveData<Meals>
-    fun getMealsByMainIngredient(ingredient: String): LiveData<Meals>
-    fun getMealsByArea(area: String): LiveData<Meals>
     fun getLatestMeals(successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit)
     fun getMealCategories(successHandler: (List<Category>?) -> Unit, failureHandler: (Throwable?) -> Unit)
     fun getRandomMeals(successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit)
