@@ -1,10 +1,10 @@
 package za.co.pabimoloi.parmesan.presentation.mealview
 
-import android.arch.lifecycle.Observer
-import android.support.v7.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.MealViewViewModel
@@ -18,7 +18,7 @@ class MealView : AppCompatActivity() {
         val viewModel = MealViewViewModel(application)
         val mealViewAdapter = MealViewAdapter(viewModel)
         viewModel.getMealById(mealId)
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_latest_meals)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = mealViewAdapter
         viewModel.mealsResponse.observe(this, Observer<List<Meal>> {

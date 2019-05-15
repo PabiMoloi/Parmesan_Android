@@ -1,6 +1,6 @@
 package za.co.pabimoloi.parmesan.data.repository
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import retrofit2.Call
 import za.co.pabimoloi.parmesan.data.model.Category
 import za.co.pabimoloi.parmesan.data.model.CategoryList

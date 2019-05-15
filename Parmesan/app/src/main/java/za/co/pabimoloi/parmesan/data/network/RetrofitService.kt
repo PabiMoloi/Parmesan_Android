@@ -1,6 +1,6 @@
 package za.co.pabimoloi.parmesan.data.network
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
