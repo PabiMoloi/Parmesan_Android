@@ -18,3 +18,7 @@ Parmesan/\.idea/vcs\.xml
 Parmesan/\.idea/caches/
 
 Parmesan/\.idea/
+
+\.DS_Store
+
+\.idea/

@@ -5,16 +5,13 @@ import androidx.lifecycle.Observer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_latest_meals.view.*
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Category
 import za.co.pabimoloi.parmesan.data.model.Meal
-import za.co.pabimoloi.parmesan.presentation.category.MealCategoryListAdapter
 import za.co.pabimoloi.parmesan.viewmodel.LatestMealsViewModel
 import za.co.pabimoloi.parmesan.viewmodel.MealCategoriesViewModel
 

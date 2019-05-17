@@ -21,7 +21,8 @@
         </activity>
         <activity
             android:name=".presentation.home.Home"
-            android:label="@string/title_activity_home"></activity>
+            android:label="@string/title_activity_home"
+            android:theme="@style/NoActionBarTheme"></activity>
         <activity android:name=".presentation.mealview.MealView"></activity>
     </application>
 

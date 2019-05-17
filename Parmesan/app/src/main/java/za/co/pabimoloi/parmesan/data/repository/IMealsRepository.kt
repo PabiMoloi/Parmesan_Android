@@ -2,10 +2,7 @@ package za.co.pabimoloi.parmesan.data.repository
 
 import androidx.lifecycle.LiveData
 import retrofit2.Call
-import za.co.pabimoloi.parmesan.data.model.Category
-import za.co.pabimoloi.parmesan.data.model.CategoryList
-import za.co.pabimoloi.parmesan.data.model.Meal
-import za.co.pabimoloi.parmesan.data.model.Meals
+import za.co.pabimoloi.parmesan.data.model.*
 
 interface IMealsRepository {
 
@@ -13,4 +10,5 @@ interface IMealsRepository {
     fun getLatestMeals(successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit)
     fun getMealCategories(successHandler: (List<Category>?) -> Unit, failureHandler: (Throwable?) -> Unit)
     fun getRandomMeals(successHandler: (List<Meal>?) -> Unit, failureHandler: (Throwable?) -> Unit)
+    fun getAreaList(successHandler: (List<Area>?) -> Unit, failureHandler: (Throwable?) -> Unit)
 }

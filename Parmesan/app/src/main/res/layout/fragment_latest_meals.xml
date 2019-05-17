@@ -9,16 +9,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-   <!-- <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_discover"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ActionBarStyle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /> -->
-
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package za.co.pabimoloi.parmesan.presentation.category
+package za.co.pabimoloi.parmesan.presentation.latestmeals
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import android.widget.TextView
 import com.squareup.picasso.Picasso
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.data.model.Category
-import za.co.pabimoloi.parmesan.data.model.Meal
 import za.co.pabimoloi.parmesan.viewmodel.MealCategoriesViewModel
 
 class MealCategoryListAdapter(private val mealCategoryViewModel: MealCategoriesViewModel) : RecyclerView.Adapter<MealCategoryListAdapter.MealCategoryListViewHolder>(){
@@ -18,17 +17,11 @@ class MealCategoryListAdapter(private val mealCategoryViewModel: MealCategoriesV
 
         var categoryName: TextView = view.findViewById(R.id.textViewCategoryName)
         var mealThumb: ImageView = view.findViewById(R.id.imageViewCategoryThumb)
-        //var categoryDescription: TextView
-
-        init {
-            //categoryDescription = view.findViewById(R.id.textViewCategoryDescription)
-        }
     }
     override fun onBindViewHolder(holderCategory: MealCategoryListViewHolder, position: Int) {
         val mealCategory: Category = mealCategoryViewModel.getMealCategoryAt(position)!!
         holderCategory.categoryName.text = mealCategory.getStrCategory()
         Picasso.get().load(mealCategory.getStrCategoryThumb()).into(holderCategory.mealThumb)
-       // holderCategory.categoryDescription.text = mealCategory.getStrCategoryDescription()
         holderCategory.view.tag = position
     }
 
