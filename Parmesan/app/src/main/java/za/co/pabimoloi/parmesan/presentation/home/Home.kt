@@ -1,16 +1,17 @@
 package za.co.pabimoloi.parmesan.presentation.home
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import kotlinx.android.synthetic.main.activity_home.*
 import za.co.pabimoloi.parmesan.R
 import za.co.pabimoloi.parmesan.presentation.random.RandomMealsFragment
 import za.co.pabimoloi.parmesan.presentation.category.MealCategoryFragment
 import za.co.pabimoloi.parmesan.presentation.latestmeals.LatestMealsFragment
 
-class Home : AppCompatActivity(){
+class Home : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -32,6 +33,7 @@ class Home : AppCompatActivity(){
         }
         false
     }
+
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout_home_screen, fragment)
@@ -40,9 +42,11 @@ class Home : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_YES)
         setContentView(R.layout.activity_home)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation.setSelectedItemId(R.id.navigation_meal)
+        navigation.selectedItemId = R.id.navigation_meal
     }
 }

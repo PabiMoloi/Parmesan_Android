@@ -4,39 +4,40 @@ import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import za.co.pabimoloi.parmesan.data.InjectorUtil
+import za.co.pabimoloi.parmesan.data.model.Area
 import za.co.pabimoloi.parmesan.data.model.Category
 import za.co.pabimoloi.parmesan.data.repository.IMealsRepository
 
-class MealCategoriesViewModel(private val application: Application) : ViewModel() {
+class AreaListViewModel(private val application: Application) : ViewModel() {
 
     lateinit var iMealsRepository: IMealsRepository
-    var categoryResponse: MutableLiveData<List<Category>> = MutableLiveData()
+    var areaResponse: MutableLiveData<List<Area>> = MutableLiveData()
     var apiError = MutableLiveData<Throwable>()
 
-    fun getMealCategories() {
+    fun getAreaList() {
         iMealsRepository = InjectorUtil.getInstance(application)
-        iMealsRepository.getMealCategories(
-                {
-                    categoryResponse.value = it
-                },
+        iMealsRepository.getAreaList({
+            areaResponse.value = it
+        },
                 {
                     apiError.value = it
                 }
         )
     }
 
-    fun getCategorySize(): Int {
-        categoryResponse.value?.let {
+    fun getAreaListSize(): Int {
+        areaResponse.value?.let {
             return it.size
         }
         return 0
     }
 
-    fun getMealCategoryAt(position: Int): Category? {
-        return if (position < getCategorySize()) {
-            categoryResponse.value?.get(position)
+    fun getAreaAtPosition(position: Int): Area? {
+        return if (position < getAreaListSize()) {
+            areaResponse.value?.get(position)
         } else {
             null
         }
     }
 }
+

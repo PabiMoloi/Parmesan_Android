@@ -8,8 +8,8 @@
 
     <item
         android:id="@+id/navigation_meal_categories"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_meal_categories" />
+        android:icon="@drawable/ic_place"
+        android:title="@string/title_meal_area" />
 
     <item
         android:id="@+id/navigation_meal_ingredient"

@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fdd835</color>
-    <color name="colorPrimaryDark">#c6a700</color>
-    <color name="colorAccent">#fdd835</color>
-    <color name="colorGreyText">#757575</color>
-    <color name="colorWhite">#ffffff</color>
-    <color name="colorLightGrey">#9e9e9e</color>
+    <!-- accent -->
+    <color name="red">#d32f2f</color>
+<!--primary color -->
+    <color name="mustard">#F9A825</color>
+    <!-- primary light color-->
+    <color name="yellow">#ffd95a</color>
+    <!-- primary dark color -->
+    <color name="dark_mustard">#c17900</color>
+    <!-- secondary color -->
+    <color name="white">#ffffff</color>
+    <!-- secondary dark color -->
+    <color name="light_grey">#25CCCCCC</color>
+    <!-- secondary text color -->
+    <color name="black">#000000</color>
 </resources>
